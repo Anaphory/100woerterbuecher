@@ -1,0 +1,69 @@
+Aufgabe: Semantische Karten aus Polysemien generieren
+Schwierigkeit: *****
+
+Wie angekündigt ist das anspruchsvollste Programmierprojekt,
+das wir anbieten, die Erzeugung von semantischen Karten aus
+großen Mengen von Polysemiedaten.
+
+Dies soll eine nur grob gegliederte, aber sehr freie und
+unabhängige Arbeit sein. Deswegen sind die Anweisungen recht
+vage gehalten und sind eher als Vorschläge für die Strukturierung
+der Arbeit zu verstehen.
+
+Zur Wiederholung noch einmal die Definition einer semantischen
+Karte, wie wir sie erzeugen wollen. Eine semantische Karte ist in
+diesem Kurs ein Graph (Gebilde aus Kanten und Knoten) 
+über deutschen Glossen, in dem jede durch eine Polysemie in einer
+Sprache definierte Glossenmenge aus den Inputdaten einen 
+zusammenhängenden Bereich abdeckt. Ein zusammenhängender Bereich
+ist eine Gruppe von Knoten, in der man von jedem Knoten zu jedem
+anderen Knoten kommen kann, ohne Knoten außerhalb der Gruppen
+durchlaufen zu müssen. Wenn ihr das Gefühl habt, diese Definition
+noch nicht völlig begriffen zu haben, solltet ihr sie euch zuerst
+anhand weiterer Beispiele klarmachen.
+
+Wichtig zur Vermeidung von Missverständnissen ist die Unterscheidung 
+zwischen dem Graphen und seiner Visualisierung. Graphen sind abstrakte 
+Strukturen, die nur mit Hilfe der Kanten und Knoten beschrieben 
+werden können, ohne dass wir den Knoten Positionen in einer Fläche zuweisen. 
+Was wir bisher an die Tafel gemalt haben, war eine von vielen möglichen
+graphischen Repräsentationen des Graphen. Die Platzierung der Knoten
+im Raum für eine schöne Darstellung ist nicht Teil dieser Aufgabe,
+hier geht es nur um die Findung einer Lösung in Form einer Menge von
+Kanten, die eine Karte definieren.
+
+1) Wir überlegen uns zuerst auf Papier einen Algorithmus,
+der die gestellte Aufgabe lösen sollte. In welchem Zustand beginnt
+die Karte? In welcher Reihenfolge werden Verbindungen hinzugefügt?
+Wie prüfen wir systematisch, ob eine bestimmte Menge schon in der
+Karte enthalten sind, oder ob eine neue Verbindung nötig ist?
+Wenn wir mehrere Möglichkeiten für neue Verbindungen haben, gibt
+es einen Weg, vielleicht unter Einbeziehung weiterer Glossenmengen
+zu entschieden, welche zusätzliche Kante sich am meisten lohnt?
+Wie testen wir überhaupt effizient, ob eine noch nicht betrachtete
+Menge im Graphen schon eine zusammenhängende Komponente bildet?
+
+2) Im zweiten Schritt definieren wir unsere Anforderungen
+für die Datenstrukturen, die wir zur Umsetzung des Algorithmus
+benötigen, und planen die Programmierung. Dazu gehören mindestens
+drei Teilaufgaben:
+ a) Wie repräsentieren wir die Glossenmengen im Speicher? Brauchen wir
+    effiziente Indexstrukturen, um z.B. die Mengen einer bestimmten Größe
+    schnell nachzuschlagen, oder auch Mengen, die eine Glosse teilen?
+ b) Wie repräsentieren wir die semantische Karte selbst? Es gibt im
+    Prinzip zwei Möglichkeiten, Graphen abzubilden, nämlich entwder
+    als Adjazenzmatrix oder durch Adjazenzlisten. Recherchiert beides,
+    und entscheidet euch informiert für eine der beiden Möglichkeiten.
+ c) Wie repräsentieren wir den aktuellen Zustand der Lösung? Gibt es
+    Datenstrukturen, die uns effizient jeweils die nächste relevante
+    Menge liefern können? Wie merken wir uns, welche Mengen wir schon
+    verarbeitet haben, und welche noch ausstehen?
+
+3) Erst jetzt geht es an die Implementierung. Eine Testmenge aus
+einem interessanten Bereich des Lexikons findet ihr in der Datei
+polysemien-test.txt, die Glossenmengen aus einer riesigen Datenbank
+in polysemien-alle.txt. Für dieses Dateiformat müsst ihr zunächst
+ein einfaches Einleseprogramm schreiben, das Dateien liest und die
+darin enthalteten Polysemien abbildet.
+
+

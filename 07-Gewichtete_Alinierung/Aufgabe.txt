@@ -1,0 +1,17 @@
+* Match-Gewichte
+
+Erweitere die Funktionssignatur, sodass die Werte für Matches,
+Mismatches und Lücken explizit angegeben werden können.
+
+* Lautähnlichkeiten
+
+In ../Needleman-Wunsch haben wir eine Implementierung des
+Needleman-Wunsch-Alinierungsalgorithmus. Der hat keine Ahnung von
+Linguistik und weiß nicht, dass o und u sich ziemlich ähnlich sind,
+aber k und u gar nicht. Wir wollen das jetzt ändern: Schreibt die
+Funktion um, sodass sie einen zusätzlichen Parameter `similarity` nimmt.
+
+Wenn `similarity={('a', 'α'): 0} übergeben wird, soll der
+Mismatch-Wert für a und α Null sein, für alle nicht spezifizierten
+Werte die Standardeinstellung.
+

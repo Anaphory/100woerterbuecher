@@ -1,0 +1,9 @@
+Gibt’s ein System für die phonemischen Unterschiede in Wörtern wie den folgenden?
+
+Eva, evaluiert
+Maschine, Schinken
+lacht, Gelächter
+Erbe, Beere, Rebe, ererbt, Bert, Brett, Berg, bergen, Bär, berüchtigt
+Maserung, Gasertrag
+der, Modul, das, Modul
+Montage, Montage

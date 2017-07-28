@@ -1,0 +1,64 @@
+* Ähnlichkeiten ausrechnen
+
+Die Datei `beispieldaten_northeuralex_kurz.tsv` enthält eine
+lexikalische Datenbank mit Wörtern auf Deutsch, Englisch und Dänisch.
+Die Spalte `class` in der Tabellen-Datei enthält die Homologieklassen
+der Wörter, also haben zum Beispiel deutsch und dänisch verwandte
+Wörter für die Bedeutung „lesen (Verb)“, Englisch ein damit nicht
+verwandtes Wort.
+
+** Das offensichtliche Konzept
+
+Wie groß ist der Anteil geteilten Wortschatzes zwischen Deutsch und Englisch?
+
+** Die Schwierigkeiten
+
+Dänisch hat zwei Wörter für „versinken“ angegeben. Wie soll man die
+Ähnlichkeit zwischen Dänisch und Englisch bzw. Dänisch und Deutsch
+ausrechnen?
+
+** Konzeption
+
+Mal angenommen, du kannst die Tabelle in einem sinnvollen Format
+repräsentieren (Gereon ist faul und nutzt pandas.DataFrame oder ein
+numpy.ndarray; Johannes kennt keine spezifischen Python-Dinge und
+nutzt deshalb eher eine Liste von Dictionarys oder eine Liste von
+Listen – such dir was aus und frag im Zweifelsfall später nach): Wie
+sieht dann – mit Zettel und Stift notiert – das Vorgehen aus, um die
+Ähnlichkeiten zu berechnen? Kannst du deinen ersten Algorithmus
+detaillierter und weniger detailliert beschreiben? Das könnte dir
+helfen, ihn in Unterschritte und Funktionen aufzuteilen.
+
+** Implementation: Lesen aus Datei
+
+Eins der folgenden Snippets sollte dir helfen, die Datei einzulesen
+und in einen passenden Typ zu verwandeln. (Das erste ist sehr manuell,
+das letzte sehr viel Magie. Du darfst gerne in die Dokumentationen von
+open, split, csv, pandas.read_csv oder ähnlichem schauen, um zu
+verstehen, was da abgeht.)
+
+datei = open(dateiname)
+header = None
+data = []
+for line in datei:
+    if header:
+        data.append(
+            dict(zip(header, line.split("\t"))))
+    else:
+        header = line.split("\t")
+
+
+import csv
+data = []
+csv.reader(dateiname, delimiter="\t")
+for row in reader:
+    data.append(row)
+
+
+import pandas
+pandas.read_csv(dateiname, sep="\t")
+
+** Implementation: Berechnung
+
+Jetzt solltest du ungefähr das Handwerkszeug haben, um die Berechnung
+von Anfang bis Ende zu implementieren.

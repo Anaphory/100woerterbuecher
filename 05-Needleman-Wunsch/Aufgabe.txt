@@ -1,0 +1,54 @@
+* Editierdistanz
+
+Sucht euch mehrere Wörter aus NorthEuraLex (in ../Aehnlichkeitsmatrix)
+und versucht, sie zu alinieren – gleiche Laute sollten untereinander
+stehen, es sei denn eine Alinierung mit Mismatches ist viel kürzer.
+
+* Needleman-Wunsch-Algorithmus
+
+Wenn wir diesen Prozess automatisieren wollen, können wir nicht naiv
+alle theoretisch möglichen, aber meist ganz schlechten Alinierungen
+ausrechnen und vergleichen, stattdessen gibt es seit langem in der
+Bioinformatik effiziente Methoden, um Editierdistanzen auszurechnen
+und Sequenzen zu alinieren.
+
+Hier im Verzeichnis liegt eine Implementierung des
+Needleman-Wunsch-Algorithmus (Needleman & Wunsch, 1970). Ihr habt
+verschiedene Möglichkeiten, euch das Verständnis dafür zu erarbeiten.
+
+** Implementierung verstehen und ausprobieren
+
+Schaut euch die Implementierung an, und benutzt sie, um zu
+verstehen wie der Algorithmus funktioniert. Sucht euch ein Paar
+Kognate aus NorthEuraLex (in ../Aehnlichkeitsmatrix) und versucht, mit
+Zettel und Stift herauszufinden, wie die Daten- und Traceback-Matrix
+aussehen, die der Algorithmus berechnet.
+
+** Algorithmus verstehen und implementieren
+
+Schaut euch verschiedene Quellen für den Algorithmus an und
+versucht, ihn zu verstehen. Eine Beispielrechnung findet ihr in
+http://www.sfs.uni-tuebingen.de/~gjaeger/lehre/ws1213/bioHistLingPublic/alignment.pdf
+und auch sonst findet man viele Erklärungen online. Der
+Wikipedia-Artikel hat zum Beispiel eine gute Erklärung, wie der
+Algorithmus funktioniert. Der ursprüngliche Algorithmus stammt von
+Needleman und Wunsch, der ursprüngliche Artikel (Needleman & Wunsch,
+1970) enthält ähliche Grafiken, da dürft ihr auch gerne mal
+reinschauen.
+
+** Algorithmus und Implementierung in Deckung bringen
+
+Ihr könnt die vorherigen Möglichkeiten natürlich kombinieren. Die
+Verständinsfrage, die dann wohl am besten zeigt, dass ihr eine gute
+Korrespondenz zwischen Beschreibung in der Wikipedia und meiner
+Implementierung gefunden habt ist folgende:
+
+Mit welchen Parametern für match, gap und mismatch arbeitet meine
+Implementierung?
+
+* Bibliographie
+
+Needleman, Saul B. & Wunsch, Christian D. (1970). "A general method
+applicable to the search for similarities in the amino acid sequence
+of two proteins". Journal of Molecular Biology. 48 (3): 443–53. PMID
+5420325. doi:10.1016/0022-2836(70)90057-4

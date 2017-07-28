@@ -1,0 +1,7 @@
+Language	Language	Similarity
+deu	eng	0.7
+deu	nld	0.9
+eng	nld	0.6
+deu	dan	0.65
+nld	dan	0.55
+eng	dan	0.5

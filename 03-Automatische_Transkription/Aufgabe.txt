@@ -1,0 +1,43 @@
+Aufgabe: Automatische Transkription des Lateinischen
+Schwierigkeit: ***
+
+Als Beispiel für ein Programm, das etwas Sinnvolles tut,
+wollen wir ein Orthographie-zu-IPA-Transkriptor für einen
+recht einfachen Fall erzeugen: für Latein mit Längenzeichen.
+
+Vielen dürften lateinische Vokabeln mit Längenzeichen aus der
+Schule bekannt sein, allerdings entspricht unsere Schulaussprache
+nicht mehr dem aktuellen Erkenntnisstand über die Aussprache des
+klassischen Latein, und daher lernt man bei dieser Aufgabe nicht nur
+methodisches Vorgehen beim Programmieren, sondern auch mehr über Latein.
+
+1) Lest euch anhand des deutschen oder englischen Wikipedia-Artikels
+in die historisch korrekte Aussprache ein, und plant dann auf Papier, 
+welche Regeln zur Transformation ihr benötigen werdet. 
+Einige davon werden kontextabhängig sein, andere nicht.
+
+https://de.wikipedia.org/wiki/Lateinische_Aussprache
+https://en.wikipedia.org/wiki/Latin_spelling_and_pronunciation
+
+2) Einige der Regeln werden den Kontext für andere Regeln zerstören
+oder erzeugen. Man nennt die dadurch erzeugten Abhängigkeiten zwischen
+den Regeln Feeding (Kontexterzeugung) und Bleeding (Kontextzerstörung).
+Versucht (nicht zu lange!), die in der ersten Aufgabe entwickelten Regeln
+in eine Reihenfolge zu bringen, die funktionieren müsste, um geschriebenes
+Latein (mit Längenzeichen) in IPA zu transformieren. Es gibt nicht nur
+eine richtige Lösung, aber ziemlich viele Reihenfolgen werden nicht funktionieren.
+
+3) Sobald die Reihenfolge der ersten Regeln steht, könnt ihr euch an die
+Implementierung machen, um zu schauen, ob die Transformation wie erwartet
+funktioniert. Dazu erhaltet ihr Testdaten in lat-northeuralex.txt, wo in
+der ersten Spalte ein lateinisches Wort in Orthographie steht, und in der
+zweiten Spalte die korrekte Aussprache laut unserem aktuellen Transkriptor.
+Schreibt ein Programm, das die Wörter aus der ersten Spalte liest,
+durch die gewählten Regeln in der aktuellen Reihenfolge transformiert, 
+und dann prüft, ob das Ergebnis mit dem in der zweiten Spalte übereinstimmt. 
+Falls nicht, könnt ihr euch eine Warnung ausgeben lassen, um jederzeit 
+eine Liste von Wörtern erzeugen zu können, bei denen die Transkription 
+noch nicht völlig korrekt funktioniert. Vielleicht seid ihr in einigen
+Fällen sogar besser als unsere recht eilig zusammengeschriebene erste
+Version. Hinweise auf Fehler in unserem eigenen Transkriptor fänden wir
+durchaus hilfreich, wenn ihr sie vorher sorgfältig geprüft habt.

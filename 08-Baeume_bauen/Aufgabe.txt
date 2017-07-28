@@ -1,0 +1,47 @@
+* Manuell
+
+Die Datei `pairwise_shared_ratios_small.tsv` enthält die paarweisen
+Ähnlichkeiten (0=ganz verschieden, 1=ganz gleich) zwischen fünf
+nordeuropäischen Sprachen.  Konsturiert daraus einen binären Baum, der
+die Tatsache wiederspiegelt, dass ähnliche Sprachen im Baum verbunden
+sein sollen, bevor unähnliche sich treffen.
+
+* Systematisch
+
+Um die Aufgabe oben zu lösen, brauchtet ihr, wenigstens implizit, eine
+Strategie, um die Ähnlichkeiten zwischen "Fränkisch" (also dem Knoten
+zwischen deu und nld) und anderen Sprachen abzuschätzen. Könnt ihr
+euer vorgehen dort allgemeingütig aufschreiben?
+
+* Iterativ
+
+Wenn man ein Vorgehen hat, um die Abstände für einen neuen Knoten zu
+schätzen, kann man jetzt genau wie einen der ursprünglichen Knoten
+behandeln.  Im Algorithmus-Design kann man jetzt also rekursiv das
+Problem mit N Lects auf das mit N-1 zurückführen, indem man zwei Lects
+zu einem neuen (möglicherweise rekonstruierten) Lect kombiniert und
+die Entfernungen zwischen dem neuen Lect und den anderen Lects
+schätzt. Könnt ihr diesen rekursiven Algorithmus aufschreiben? Wenn
+das unklar ist, fragt mal nach anderen Erklärungen für Rekursion.
+
+* Programmtechnisch
+
+Wie bekommt man den rekursiven Algorithmus jetzt in Programmcode
+aufgeschrieben?
+
+* Ergebnisse
+
+Was sind mit diesem Algorithmus die Ergebnisse für den kleinen, per
+Hand ausgerechneten Datensatz in `pairwise_shared_ratios_small.tsv`?
+Was, wenn man ihn auf eine der anderen Ähnlichkeits-Tabellen loslässt?
+
+* Optimiert
+
+Kann man die Schätzung der neuen Ähnlichkeiten und die suche nach der
+neuesten größten Ähnlichkeit noch verbessern, indem man clevere
+Datenstrukturen und Suchmethoden nutzt?
+
+* Molecular Clock
+
+Sobald wir über die Molecular Clock Assumption gesprochen haben: Wie
+muss man den Algorithmus hier anpassen, damit er dazu passt?

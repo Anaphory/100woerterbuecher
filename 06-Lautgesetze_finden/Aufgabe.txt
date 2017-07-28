@@ -1,0 +1,45 @@
+* Paarweise Alinierungen
+
+In ../Needleman-Wunsch gibt es ein Programm, das Alinierungen
+ausrechnet.  Kopiert das Programm in euer Python-Arbeitsverzeichnis,
+passt in Zeile 77 den Pfad zu den NorthEuraLex-Beispieldaten an und
+nutzt
+
+from needlemanwunsch import all_pairs
+
+um alle paarweisen Alinierungen in NorthEuraLex zu erhalten. Dann könnt ihr mit
+
+for alignment in all_pairs():
+    ...
+
+darüber iterieren. Ein Wert von `alignment` ist dann eine Liste von
+Paaren, zum Beispiel entspricht
+
+[(None, 'j'), ('i', 'i'), ('l', 'l'), (None, 'ʲ'), (None, 'a'), ('d', 'd'), ('ʊ', 'ʲ')]
+
+der Alinierung
+
+j i l - - d ʊ
+- i l ʲ a d ʲ
+
+** Erweiterung 1: Zwischen zwei Sprachen
+
+Ändert all_pairs so ab, dass es nur Alinierungen zwischen zwei von
+euch gewählten Sprachen nah verwandten Sprachen liefert, wenn ihr
+lieber konkrete Lautgesetze als allgemeine phonetische Universalien
+finden wollt.
+
+* Systematischer Lautwandel
+
+Zählt, welche Zeichen wie häufig als Mismatches miteinander aliniert
+werden, und berechnet daraus die punktweise Transinformation für alle
+Buchstabenpaare in den Alinierungen. Die Paare mit den höchsten
+PMI-Scores sind die universell (für alle betrachteten Sprachen)
+häufigsten Lautgesetze.
+
+** Erweiterung 2: Token-Basiert
+
+Wenn ihr einen Tokenizer geschrieben oder gefunden habt, der euch
+gefällt (und zum Beispiel lʲ und t͡ʃ je zu einem einzelnen Token
+macht), schreibt all_pairs so um, dass es den Tokenizer nutzt. Wie
+unterscheiden sich die neuen PMI-Werte?

@@ -1,0 +1,53 @@
+Aufgabe: einfache Lautgesetze implementieren
+Schwierigkeit: **
+
+In dieser ersten selbständigen Programmierübung soll der Umgang mit (IPA-)Strings geübt werden,
+indem wir einige einfache Lautgesetze für die Aussprache des Deutschen implementieren.
+Dazu kann man einfach Funktionen schreiben, die als Argument einen String nehmen, das 
+entsprechende Lautgesetz umsetzen und den veränderten String zurückgeben:
+
+def apply_rule_X(string):
+    ...
+    return string
+
+1) Zuerst implementieren wir die bereits besprochene Phonem-zu-Laut-Regel mit dem Deutschen "ch",
+das wir in der phonemischen Schreibweise mit /x/ schreiben, und aus dem phonetisch [ç] und [χ] werden soll:
+
+/aʊfvaxən/
+/mɛɛdxən/
+/mɪlx/
+/naxt/
+/zuuxən/
+
+2) Nach dem gleichen Muster soll jetzt auch eine der zahlreichen möglichen Lösungen
+für die Aussprache des deutschen Phonems /r/ implementiert werden. Dazu braucht ihr
+separate Regeln mindestens für die Umgebung nach Vokal und vor Konsonant, und für
+alle anderen Umgebungen. Feinere Unterscheidungen sind je nach Dialekt ebenfalls nötig.
+
+/fʏrxtən/
+/ɡəruux/
+/raɪx/
+/rɪxtɪg/
+/ʃmɛrt͡s/
+
+3) Im letzten schon recht schwierigen Schritt soll versucht werden, 
+die Aussprache des Graphems [=Schriftzeichens] "e"
+vorherzusagen. Dazu muss man mindestens berücksichtigen:
+* in der betonten Silbe (wie erkennt man die?) oder am Wortende?
+* lang oder kurz? (Konsonanten danach zählen!)
+* als Teil eines Diphthongs? (Sonderaussprache für "ei" und "eu"!) 
+* in einer von vielen unbetonten Vorsilben mit "e"? ("ver-", "be-", "ge-")
+
+/beherʃen/
+/feuçt/
+/ɡeʃeŋk/
+/knɔxen/
+/ʃne/
+/ʃneiden/
+/ʃver/
+/vɔxe/
+
+
+
+
+
